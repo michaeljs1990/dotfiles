@@ -14,6 +14,8 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+export EDITOR=vim
+
 # Put your fun stuff here.
 
 neofetch

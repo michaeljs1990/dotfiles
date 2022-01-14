@@ -1,0 +1,56 @@
+To read emerge updates you can run 
+
+$ eselect news
+
+To generate the initramfs
+
+$ dracut --kver 5.16.0-rc8
+
+To setup the initial grub on an EFI system run the following.
+
+$ grub-install --target=x86_64-efi --efi-directory=/boot
+
+If you see an error about "Could not prepare Boot variable: Read-only file
+system". Run the following command and re-run the above.
+
+$ mount -o remount,rw /sys/firmware/efi/efivars
+
+To generate grub
+
+$ grub-mkconfig -o /boot/grub/grub.cfg
+
+To check the initramfs output
+
+$ lsinitrd initramfs-5.16.0-rc8.img
+
+To update all packages use the following command.
+
+$ emerge --ask --update --deep --changed-use @world
+
+/usr/src/linux contians a git checkout of the linux kernel that is
+currently in use. For upgrade it is likely best to make another checkout
+so you can always fall back to the old one that is known to work.
+
+To look at what packages are installed without adding something like
+app-portage/eix you can just dig around in /var/db/pkg/*
+
+To update timezone info look at available zones in /usr/share/zoneinfo and run
+the following.
+
+$ echo "US/Central" > /etc/timezone
+$ emerge --config sys-libs/timezone-data
+
+
+Helpful links used for this build
+
+https://wiki.gentoo.org/wiki/Handbook:AMD64/Full/Installation
+https://wiki.gentoo.org/wiki/Kernel/Gentoo_Kernel_Configuration_Guide
+https://amedeos.github.io/gentoo/2020/12/26/install-gentoo-with-uefi-luks-btrfs-and-systemd.html
+
+Window Manager
+
+https://github.com/baskerville/bspwm
+https://www.reddit.com/r/unixporn/comments/ru73ai/bspwm_blue/
+https://terminalroot.com/how-to-install-bspwm-on-gentoo/
+https://www.reddit.com/r/unixporn/comments/p0u4mv/bspwm_gentoo_one_dark_rice/
+https://wiki.archlinux.org/title/bspwm

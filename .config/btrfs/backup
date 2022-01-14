@@ -1,0 +1,28 @@
+#!/bin/bash
+# Silly variables prefixed with s here are in place of
+# writing out snapshot_ for everything.
+
+set -eux -o pipefail
+
+sroot="/.snapshots"
+sid=$(date +%Y-%m-%d.%s)
+
+function snapshot () {
+  if [ -z $1 ]; then
+    echo "snapshot needs a name argument"
+    exit 1
+  fi
+
+  if [ -z $2 ]; then
+    echo "snapshot needs a path argument"
+    exit 1
+  fi
+
+  prefix=$1
+  spath=$2
+
+  sudo btrfs subvolume snapshot -r "${spath}" "${sroot}/${prefix}-${sid}"
+}
+
+snapshot "root" "/"
+snapshot "home" "/home"

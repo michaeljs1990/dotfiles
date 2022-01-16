@@ -17,7 +17,7 @@ fi
 export EDITOR=vim
 
 # Put your fun stuff here.
-
+echo
 neofetch
 
 # Setup developer tools like golang

@@ -1,0 +1,9 @@
+Existing solution for incident management
+
+- https://www.nurtch.com/
+- https://firehydrant.io/
+- https://github.com/Netflix/dispatch
+
+Discussion about existing solutions
+
+- https://news.ycombinator.com/item?id=17382927

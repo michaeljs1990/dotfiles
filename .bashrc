@@ -33,3 +33,6 @@ export PATH=~/code/tools/${BW_VERSION}/bin:$PATH
 # opam configuration
 test -r /home/eatingthenight/.opam/opam-init/init.sh \
   && . /home/eatingthenight/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+# Go ENVs
+export GOPATH=~/.cache/gopath

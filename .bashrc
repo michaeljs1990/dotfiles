@@ -15,6 +15,7 @@ if [[ $- != *i* ]] ; then
 fi
 
 export EDITOR=vim
+export PATH=~/.bin:$PATH
 
 # Put your fun stuff here.
 echo

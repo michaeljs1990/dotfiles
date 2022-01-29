@@ -25,11 +25,9 @@ neofetch
 
 GO_VERSION=go-1.17.6
 OPAM_VERSION=opam-2.1.2
-BW_VERSION=bubblewrap-0.5.0
 
 export PATH=~/code/tools/${GO_VERSION}/bin:$PATH
 export PATH=~/code/tools/${OPAM_VERSION}/bin:$PATH
-export PATH=~/code/tools/${BW_VERSION}/bin:$PATH
 
 # opam configuration
 test -r /home/eatingthenight/.opam/opam-init/init.sh \

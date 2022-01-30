@@ -35,3 +35,4 @@ test -r /home/eatingthenight/.opam/opam-init/init.sh \
 
 # Go ENVs
 export GOPATH=~/.cache/gopath
+export PATH=~/.cache/gopath/bin:$PATH

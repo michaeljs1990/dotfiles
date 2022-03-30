@@ -13,6 +13,7 @@
 .config/backgrounds/*
 .config/installers/nerd-fonts
 .config/neofetch/config.conf
+.config/truffle-nodejs/*
 
 !.config
 
